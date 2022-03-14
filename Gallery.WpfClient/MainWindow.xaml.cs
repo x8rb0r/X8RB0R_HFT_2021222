@@ -29,6 +29,7 @@ namespace Gallery.WpfClient
         {
             PaintingWindow paintingWindow = new PaintingWindow();
             paintingWindow.Show();
+
         }
     }
 }
