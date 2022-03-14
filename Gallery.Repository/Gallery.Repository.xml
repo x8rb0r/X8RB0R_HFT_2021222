@@ -1,0 +1,379 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gallery.Repository</name>
+    </assembly>
+    <members>
+        <member name="T:Gallery.Repository.ExhibitRepository">
+            <summary>
+            Exhibit Repository manager class.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.ExhibitRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.ExhibitRepository"/> class.
+            Exhibit Repository constructor.
+            </summary>
+            <param name="ctx">Database context.</param>
+        </member>
+        <member name="M:Gallery.Repository.ExhibitRepository.AddExhibit(Gallery.Data.Models.Exhibit)">
+            <summary>
+            Adds exhibit to the table.
+            </summary>
+            <param name="newExhibit">New exhibit instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.ExhibitRepository.ChangeEntryFee(System.Int32,System.Int32)">
+            <summary>
+            Changes entry fee of exhibit based on ID.
+            </summary>
+            <param name="id">Id of exhibit instance.</param>
+            <param name="newFee">Changes fee of exhibit instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.ExhibitRepository.ChangeRating(System.Int32,System.Int32)">
+            <summary>
+            Changes rating value of exhibit based on ID.
+            </summary>
+            <param name="id">Id of exhibit.</param>
+            <param name="newRating">New rating of exhibit instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.ExhibitRepository.DeleteExhibit(System.Int32)">
+            <summary>
+            Deletes exhibit instance.
+            </summary>
+            <param name="id">Id of exhibit.</param>
+        </member>
+        <member name="M:Gallery.Repository.ExhibitRepository.Exists(System.Int32)">
+            <summary>
+            Checks if exhibit of requested ID exists in table.
+            </summary>
+            <param name="id">Id of exhibit.</param>
+            <returns>True if exists, false if not.</returns>
+        </member>
+        <member name="M:Gallery.Repository.ExhibitRepository.GetOne(System.Int32)">
+            <summary>
+            Returns a single exhibit instance by ID.
+            </summary>
+            <param name="id">Id of exhibit.</param>
+            <returns>Exhibit instance based on input id parameter.</returns>
+        </member>
+        <member name="T:Gallery.Repository.GenericRepository`1">
+            <summary>
+            Generic Repository manager class.
+            </summary>
+            <typeparam name="T">Generic Type T repository.</typeparam>
+        </member>
+        <member name="F:Gallery.Repository.GenericRepository`1.ctx">
+            <summary>
+            Database context provided by constructor.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.GenericRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.GenericRepository`1"/> class.
+            Recieves database context.
+            </summary>
+            <param name="ctx">Database context recieved as parameter.</param>
+        </member>
+        <member name="M:Gallery.Repository.GenericRepository`1.GetAll">
+            <summary>
+            Returns an IQueryable type of all the elements in a table.
+            </summary>
+            <returns>Returns IQueryable<typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:Gallery.Repository.GenericRepository`1.GetOne(System.Int32)">
+            <summary>
+            Returns a single instance by ID.
+            </summary>
+            <param name="id">Returns a single T type by Id.</param>
+            <returns>Generic type T.</returns>
+        </member>
+        <member name="M:Gallery.Repository.GenericRepository`1.Exists(System.Int32)">
+            <summary>
+            Checks if instance exists in table.
+            </summary>
+            <param name="id">Id of instance.</param>
+            <returns>True if exists, false if not.</returns>
+        </member>
+        <member name="T:Gallery.Repository.PaintingRepository">
+            <summary>
+            Painting Repository manager class.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.PaintingRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.PaintingRepository"/> class.
+            </summary>
+            <param name="ctx">Database context as parameter.</param>
+        </member>
+        <member name="M:Gallery.Repository.PaintingRepository.AddPainting(Gallery.Data.Models.Painting)">
+            <summary>
+            Adds painting to table.
+            </summary>
+            <param name="newPainting">New painting instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.PaintingRepository.ChangeCondition(System.Int32,System.Int32)">
+            <summary>
+            Changes condition of painting based on ID.
+            </summary>
+            <param name="id">Id of painting instance.</param>
+            <param name="newCondition">New condition of requested painting.</param>
+        </member>
+        <member name="M:Gallery.Repository.PaintingRepository.ChangeValue(System.Int32,System.Int32)">
+            <summary>
+            Changes value of painting based on ID.
+            </summary>
+            <param name="id">Id of painting instance.</param>
+            <param name="newValue">New value of requested painting instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.PaintingRepository.DeletePainting(System.Int32)">
+            <summary>
+            Deletes painting instance.
+            </summary>
+            <param name="id">Id of painting.</param>
+        </member>
+        <member name="M:Gallery.Repository.PaintingRepository.Exists(System.Int32)">
+            <summary>
+            Checks to see if painting of requested ID exists.
+            </summary>
+            <param name="id">ID of painting.</param>
+            <returns>True if exists, false if not.</returns>
+        </member>
+        <member name="M:Gallery.Repository.PaintingRepository.GetOne(System.Int32)">
+            <summary>
+            Returns a single painting instance by ID.
+            </summary>
+            <param name="id">Id of painting instance.</param>
+            <returns>Returns requested painting instance by Id.</returns>
+        </member>
+        <member name="T:Gallery.Repository.PersonRepository">
+            <summary>
+            Person Repository manager class.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.PersonRepository"/> class.
+            </summary>
+            <param name="ctx">Database context.</param>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.AddPerson(Gallery.Data.Models.Person)">
+            <summary>
+            Adds person to table.
+            </summary>
+            <param name="newPerson">New person instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.ChangeEmail(System.Int32,System.String)">
+            <summary>
+            Changes e-mail address of person based on ID.
+            </summary>
+            <param name="id">Target's Id.</param>
+            <param name="newEmail">Target Id's e-mail address.</param>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.ChangePhoneNumber(System.Int32,System.String)">
+            <summary>
+            Changes phone number of person based on ID.
+            </summary>
+            <param name="id">Target's Id.</param>
+            <param name="newNumber">Target Id's new phone number.</param>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.ChangeZipCode(System.Int32,System.Int32)">
+            <summary>
+            Changes zip code of person based on ID.
+            </summary>
+            <param name="id">Target's Id.</param>
+            <param name="newZipCode">Target Id's new zip code.</param>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.DeletePerson(System.Int32)">
+            <summary>
+            Deletes person instance.
+            </summary>
+            <param name="id">Id of person.</param>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.Exists(System.Int32)">
+            <summary>
+            Checks if person of requested ID exists in table.
+            </summary>
+            <param name="id">Id of person.</param>
+            <returns>True if exists, false if not.</returns>
+        </member>
+        <member name="M:Gallery.Repository.PersonRepository.GetOne(System.Int32)">
+            <summary>
+            Returns a single person instance by ID.
+            </summary>
+            <param name="id">Target's Id.</param>
+            <returns>Returns Person instance.</returns>
+        </member>
+        <member name="T:Gallery.Repository.Exceptions.InvalidChangeException">
+            <summary>
+            Exception class for when an invalid change is detected.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.Exceptions.InvalidChangeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.Exceptions.InvalidChangeException"/> class.
+            </summary>
+            <param name="message">Message from when the exception is thrown.</param>
+        </member>
+        <member name="M:Gallery.Repository.Exceptions.InvalidChangeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.Exceptions.InvalidChangeException"/> class.
+            </summary>
+            <param name="message">Message from when the exception is thrown.</param>
+            <param name="innerException">Value that was passed into the Exception.</param>
+        </member>
+        <member name="M:Gallery.Repository.Exceptions.InvalidChangeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.Exceptions.InvalidChangeException"/> class.
+            </summary>
+        </member>
+        <member name="T:Gallery.Repository.Exceptions.NoInstanceFoundException">
+            <summary>
+            Exception class for when an instance in a table is not found.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.Exceptions.NoInstanceFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.Exceptions.NoInstanceFoundException"/> class.
+            </summary>
+            <param name="message">Message from when the exception is thrown.</param>
+        </member>
+        <member name="M:Gallery.Repository.Exceptions.NoInstanceFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.Exceptions.NoInstanceFoundException"/> class.
+            </summary>
+            <param name="message">Message from when the exception is thrown.</param>
+            <param name="innerException">Value that was passed into the Exception.</param>
+        </member>
+        <member name="M:Gallery.Repository.Exceptions.NoInstanceFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Repository.Exceptions.NoInstanceFoundException"/> class.
+            </summary>
+        </member>
+        <member name="T:Gallery.Repository.IExhibitRepository">
+            <summary>
+            Mandatory Exhibit CRUD methods.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.IExhibitRepository.ChangeRating(System.Int32,System.Int32)">
+            <summary>
+            Changes rating value of exhibit based on ID.
+            </summary>
+            <param name="id">Id of Exhibit.</param>
+            <param name="newRating">Rating of Exhibit.</param>
+        </member>
+        <member name="M:Gallery.Repository.IExhibitRepository.ChangeEntryFee(System.Int32,System.Int32)">
+            <summary>
+            Changes entry fee of exhibit based on ID.
+            </summary>
+            <param name="id">Id of exhibit.</param>
+            <param name="newFee">New fee of Exhibit.</param>
+        </member>
+        <member name="M:Gallery.Repository.IExhibitRepository.AddExhibit(Gallery.Data.Models.Exhibit)">
+            <summary>
+            Add new Exhibit.
+            </summary>
+            <param name="newExhibit">New exhibit instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IExhibitRepository.DeleteExhibit(System.Int32)">
+            <summary>
+            Deletes exhibit instance.
+            </summary>
+            <param name="id">Id of exhibit.</param>
+        </member>
+        <member name="T:Gallery.Repository.IPaintingRepository">
+            <summary>
+            Mandatory Painting CRUD methods.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.IPaintingRepository.ChangeCondition(System.Int32,System.Int32)">
+            <summary>
+            Changes condition of painting based on ID.
+            </summary>
+            <param name="id">Id of Painting instance.</param>
+            <param name="newCondition">New condition of Painting instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IPaintingRepository.ChangeValue(System.Int32,System.Int32)">
+            <summary>
+            Changes value of painting based on ID.
+            </summary>
+            <param name="id">Id of Painting instance.</param>
+            <param name="newValue">New value of Painting instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IPaintingRepository.AddPainting(Gallery.Data.Models.Painting)">
+            <summary>
+            Adds new painting to table.
+            </summary>
+            <param name="newPainting">New painting instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IPaintingRepository.DeletePainting(System.Int32)">
+            <summary>
+            Deletes painting instance.
+            </summary>
+            <param name="id">Id of painting.</param>
+        </member>
+        <member name="T:Gallery.Repository.IPersonRepository">
+            <summary>
+            Mandatory Person CRUD methods.
+            </summary>
+        </member>
+        <member name="M:Gallery.Repository.IPersonRepository.ChangePhoneNumber(System.Int32,System.String)">
+            <summary>
+            Changes phone number of person based on ID.
+            </summary>
+            <param name="id">Id of Person instance.</param>
+            <param name="newNumber">New phone number of Person instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IPersonRepository.ChangeEmail(System.Int32,System.String)">
+            <summary>
+            Changes e-mail address of person based on ID.
+            </summary>
+            <param name="id">Id of Person instance.</param>
+            <param name="newEmail">New e-mail address of Person instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IPersonRepository.ChangeZipCode(System.Int32,System.Int32)">
+            <summary>
+            Changes zip code of person based on ID.
+            </summary>
+            <param name="id">Id of Person instance.</param>
+            <param name="newZipCode">New e-mail address of Person instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IPersonRepository.AddPerson(Gallery.Data.Models.Person)">
+            <summary>
+            Adds a new person to the table.
+            </summary>
+            <param name="newPerson">New person instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IPersonRepository.DeletePerson(System.Int32)">
+            <summary>
+            Deletes person instance.
+            </summary>
+            <param name="id">Id of person.</param>
+        </member>
+        <member name="T:Gallery.Repository.IRepository`1">
+            <summary>
+            Mandatory Generic CRUD methods.
+            </summary>
+            <typeparam name="T">Generic Type T.</typeparam>
+        </member>
+        <member name="M:Gallery.Repository.IRepository`1.GetOne(System.Int32)">
+            <summary>
+            Returns a single instance by ID.
+            </summary>
+            <returns>Returns T Generic type based on Id.</returns>
+            <param name="id">Id of Type T instance.</param>
+        </member>
+        <member name="M:Gallery.Repository.IRepository`1.GetAll">
+            <summary>
+            Returns an IQueryable type of all the elements in a table.
+            </summary>
+            <returns>Returns Iqueryable generic type.</returns>
+        </member>
+        <member name="M:Gallery.Repository.IRepository`1.Exists(System.Int32)">
+            <summary>
+            Mandatory Exists method to see if instance exists in table.
+            </summary>
+            <param name="id">Id of instance.</param>
+            <returns>True if exhists, false if not.</returns>
+        </member>
+    </members>
+</doc>

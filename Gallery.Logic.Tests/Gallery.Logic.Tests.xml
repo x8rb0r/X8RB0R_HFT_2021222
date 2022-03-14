@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gallery.Logic.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:Gallery.Logic.Tests.PersonLogicTests">
+            <summary>
+            Tests class used for testing the person logic.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.Tests.PersonLogicTests.ChangeEmail_Test">
+            <summary>
+            Verifies the ChangeEmail() method of the person logic class is run.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.Tests.PersonLogicTests.GetOnePerson_Test">
+            <summary>
+            Verifies the GetOnePerson() method of the person logic class is run.
+            </summary>
+        </member>
+    </members>
+</doc>

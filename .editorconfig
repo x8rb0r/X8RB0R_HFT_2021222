@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA1707: Remove the underscores from namespace name 'OENIK_PROG3_2020_2_X8RB0R'
+dotnet_diagnostic.CA1707.severity = none

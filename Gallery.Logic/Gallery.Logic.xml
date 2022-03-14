@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gallery.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:Gallery.Logic.PersonLogic">
+            <summary>
+            Person logic class.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.#ctor(Gallery.Repository.IPersonRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Logic.PersonLogic"/> class.
+            Person logic class constructor, receives repo instance.
+            </summary>
+            <param name="repo">IPersonRepository instance.</param>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.AddPerson(Gallery.Data.Models.Person)">
+            <summary>
+            Adds new person to table.
+            </summary>
+            <param name="newPerson">New person instance.</param>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.ChangeEmail(System.Int32,System.String)">
+            <summary>
+            Changes e-mail address of person based on ID, forwarded to the repository.
+            </summary>
+            <param name="id">Id of person.</param>
+            <param name="newEmail">New email of person.</param>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.ChangePhoneNumber(System.Int32,System.String)">
+            <summary>
+            Changes phone number of person based on ID, forwarded to the repository.
+            </summary>
+            <param name="id">Id of person.</param>
+            <param name="newNumber">New number of person instance.</param>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.ChangeZipCode(System.Int32,System.Int32)">
+            <summary>
+            Changes zip code of person based on ID, forwarded to the repository.
+            </summary>
+            <param name="id">If of person.</param>
+            <param name="newZipCode">New zipcode of person instance.</param>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.DeletePerson(System.Int32)">
+            <summary>
+            Deletes person instance.
+            </summary>
+            <param name="id">Id of person.</param>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.ReadAll">
+            <summary>
+            Returns a list of all the people, forwarded to the repository.
+            </summary>
+            <returns>Ilist of all people.</returns>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.GetPersonById(System.Int32)">
+            <summary>
+            Returns a single person instance by ID, forwarded to the repository.
+            </summary>
+            <param name="id">Id of person.</param>
+            <returns>Returns requested person instance.</returns>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.PersonExists(System.Int32)">
+            <summary>
+            Checks to see if the person of requested ID is present in the table.
+            </summary>
+            <param name="id">Id of person.</param>
+            <returns>True if person exists, false if not.</returns>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.GmailUsers">
+            <summary>
+            Returns the @gmail.com domain users.
+            </summary>
+            <returns>List of gmail users.</returns>
+        </member>
+        <member name="M:Gallery.Logic.PersonLogic.GmailUsersAsync">
+            <summary>
+            Returns the @gmail.com domain users.
+            </summary>
+            <returns>List of gmail users.</returns>
+        </member>
+        <member name="T:Gallery.Logic.Interfaces.IExhibitLogic">
+            <summary>
+            Gallery logic interface that consists of painting and exhibit repos.
+            </summary>
+        </member>
+        <member name="T:Gallery.Logic.Interfaces.IPaintingLogic">
+            <summary>
+            Gallery logic interface that consists of painting and exhibit repos.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.Interfaces.IPaintingLogic.GetPainting(System.Int32)">
+            <summary>
+            Returns a single painting instance by ID, forwarded to the repository.
+            </summary>
+            <param name="id">Id of painting.</param>
+            <returns>Painting instance by Id.</returns>
+        </member>
+        <member name="M:Gallery.Logic.Interfaces.IPaintingLogic.AddPainting(Gallery.Data.Models.Painting)">
+            <summary>
+            Adds new painting instance.
+            </summary>
+            <param name="newPainting">New painting instance.</param>
+        </member>
+        <member name="T:Gallery.Logic.IPersonLogic">
+            <summary>
+            Iperson Logic mandatory methods.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.IPersonLogic.GetPersonById(System.Int32)">
+            <summary>
+            Mandatory Person logic methods.
+            </summary>
+            <param name="id">Id of person.</param>
+            <returns>Person instance by Id.</returns>
+        </member>
+        <member name="M:Gallery.Logic.IPersonLogic.ChangePhoneNumber(System.Int32,System.String)">
+            <summary>
+            Changes phone number of requested person.
+            </summary>
+            <param name="id">Id of person.</param>
+            <param name="newNumber">New phone number of person.</param>
+        </member>
+        <member name="M:Gallery.Logic.IPersonLogic.ChangeEmail(System.Int32,System.String)">
+            <summary>
+            Changes email of person.
+            </summary>
+            <param name="id">Id of person.</param>
+            <param name="newEmail">New email of person.</param>
+        </member>
+        <member name="M:Gallery.Logic.IPersonLogic.ChangeZipCode(System.Int32,System.Int32)">
+            <summary>
+            Changes zipcode of person.
+            </summary>
+            <param name="id">Id of person.</param>
+            <param name="newZipCode">New zipcode of person.</param>
+        </member>
+        <member name="M:Gallery.Logic.IPersonLogic.DeletePerson(System.Int32)">
+            <summary>
+            Mandatory implemntation.
+            </summary>
+            <returns>IList of all people.</returns>
+            <summary>
+            Deletes person instance.
+            </summary>
+            <param name="id">Id of person.</param>
+        </member>
+        <member name="M:Gallery.Logic.IPersonLogic.AddPerson(Gallery.Data.Models.Person)">
+            <summary>
+            Adds new person to table.
+            </summary>
+            <param name="newPerson">New person instance.</param>
+        </member>
+        <member name="M:Gallery.Logic.IPersonLogic.PersonExists(System.Int32)">
+            <summary>
+            Checks if person of requested ID exists in table or not.
+            </summary>
+            <param name="id">Id of person.</param>
+            <returns>True if exists, false if not.</returns>
+        </member>
+        <member name="T:Gallery.Logic.QueryGroups.ExhibitsAndCountPaintingsGroup">
+            <summary>
+            Grouping class for determining the result of the related NONCRUD method.
+            </summary>
+        </member>
+        <member name="P:Gallery.Logic.QueryGroups.ExhibitsAndCountPaintingsGroup.EXHIBIT">
+            <summary>
+            Gets or sets title of the exhibit.
+            </summary>
+        </member>
+        <member name="P:Gallery.Logic.QueryGroups.ExhibitsAndCountPaintingsGroup.NUMBER_OF_PAINTINGS">
+            <summary>
+            Gets or sets number of paintings the Exhibit has.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.QueryGroups.ExhibitsAndCountPaintingsGroup.GetHashCode">
+            <summary>
+            Override required for the equality to be asserted.
+            </summary>
+            <returns>Hash code of (EXHIBIT + NUMBER_OF_PAINTINGS).</returns>
+        </member>
+        <member name="M:Gallery.Logic.QueryGroups.ExhibitsAndCountPaintingsGroup.Equals(System.Object)">
+            <summary>
+            Override required for the equality to be asserted.
+            </summary>
+            <param name="obj">obj of type ExhibitsAndCountPaintingsGroup.</param>
+            <returns>True if is equal to obj, false if not.</returns>
+        </member>
+        <member name="T:Gallery.Logic.QueryGroups.MostExpensivePaintingAndItsExhibitGroup">
+            <summary>
+            Grouping class for determining the result of the related NONCRUD method.
+            </summary>
+        </member>
+        <member name="P:Gallery.Logic.QueryGroups.MostExpensivePaintingAndItsExhibitGroup.EXHIBIT">
+            <summary>
+            Gets or sets name of the exhibit that the most expensive painting is displayed in.
+            </summary>
+        </member>
+        <member name="P:Gallery.Logic.QueryGroups.MostExpensivePaintingAndItsExhibitGroup.PAINTING">
+            <summary>
+            Gets or sets title of the most expensive painting.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.QueryGroups.MostExpensivePaintingAndItsExhibitGroup.GetHashCode">
+            <summary>
+            Override required for the equality to be asserted.
+            </summary>
+            <returns>Hash code of (EXHIBIT + PAINTING).</returns>
+        </member>
+        <member name="M:Gallery.Logic.QueryGroups.MostExpensivePaintingAndItsExhibitGroup.Equals(System.Object)">
+            <summary>
+            Override required for the equality to be asserted.
+            </summary>
+            <param name="obj">obj of type MostExpensivePaintingAndItsExhibitGroup.</param>
+            <returns>True if is equal to obj, false if not.</returns>
+        </member>
+        <member name="T:Gallery.Logic.QueryGroups.PaintingsInSunshineGroup">
+            <summary>
+            Grouping class for determining the result of the related NONCRUD method.
+            </summary>
+        </member>
+        <member name="P:Gallery.Logic.QueryGroups.PaintingsInSunshineGroup.NAME">
+            <summary>
+            Gets or sets name of the painting.
+            </summary>
+        </member>
+        <member name="M:Gallery.Logic.QueryGroups.PaintingsInSunshineGroup.GetHashCode">
+            <summary>
+            Override required for the equality to be asserted.
+            </summary>
+            <returns>Hash code of NAME.</returns>
+        </member>
+        <member name="M:Gallery.Logic.QueryGroups.PaintingsInSunshineGroup.Equals(System.Object)">
+            <summary>
+            Override required for the equality to be asserted.
+            </summary>
+            <param name="obj">obj of type PaintingsInSunshineGroup.</param>
+            <returns>True if is equal to obj, false if not.</returns>
+        </member>
+    </members>
+</doc>

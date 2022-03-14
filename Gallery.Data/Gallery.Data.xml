@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gallery.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Gallery.Data.GalleryContext">
+            <summary>
+            GalleryContext class, creates database entities and fills database with data.
+            </summary>
+        </member>
+        <member name="M:Gallery.Data.GalleryContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Data.GalleryContext"/> class.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.GalleryContext.Paintings">
+            <summary>
+            Gets or sets Paintings table.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.GalleryContext.People">
+            <summary>
+            Gets or sets People table.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.GalleryContext.Exhibitions">
+            <summary>
+            Gets or sets Exhibitions table.
+            </summary>
+        </member>
+        <member name="M:Gallery.Data.GalleryContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Connects to database using SQL input string.
+            </summary>
+            <param name="optionsBuilder">OptionsBuilder to be passed on to the method.</param>
+        </member>
+        <member name="M:Gallery.Data.GalleryContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Creates database models.
+            </summary>
+            <param name="modelBuilder">ModelBuilder to be passed on to the method.</param>
+        </member>
+        <member name="T:Gallery.Data.Models.Exhibit">
+            <summary>
+            Exhibitions table and its properties.
+            </summary>
+        </member>
+        <member name="M:Gallery.Data.Models.Exhibit.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Data.Models.Exhibit"/> class and creates a new instance of the Paintings set.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.Start">
+            <summary>
+            Gets or sets the start-date of the exhibition.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.End">
+            <summary>
+            Gets or sets the end-date of the exhibition (null if the end-date has not been decided).
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.Title">
+            <summary>
+            Gets or sets the title of the exhibition.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.Rating">
+            <summary>
+            Gets or sets the rating of the exhibition (from 0-9).
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.EntryFee">
+            <summary>
+            Gets or sets the entry fee of the exhibiton.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.Paintings">
+            <summary>
+            Gets the collection of paintings displayed in the exhibition.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.ExhibitId">
+            <summary>
+            Gets or sets the ID of the exhibition.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.EndDateString">
+            <summary>
+            Gets end date, if string is not null return date, if it is null returns "Undefined".
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Exhibit.StartDateString">
+            <summary>
+            Gets start date.
+            </summary>
+        </member>
+        <member name="T:Gallery.Data.Models.Painting">
+            <summary>
+            Paintings table and its properties.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.Title">
+            <summary>
+            Gets or sets title of painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.Painter">
+            <summary>
+            Gets or sets the name of the painter.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.Condition">
+            <summary>
+            Gets or sets the condition of the painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.YearPainted">
+            <summary>
+            Gets or sets the year the painting was painted.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.Value">
+            <summary>
+            Gets or sets the estimated value of the painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.PaintingId">
+            <summary>
+            Gets or sets the ID of the painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.Person">
+            <summary>
+            Gets or sets the person that this painting originates from.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.PersonId">
+            <summary>
+            Gets or sets the ID of the Person that this painting originates from.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.Exhibit">
+            <summary>
+            Gets or sets the exhibit that this painting is displayed in.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.ExhibitId">
+            <summary>
+            Gets or sets the ID of the exhibit that this painting is displayed in.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.ExhibitIdString">
+            <summary>
+            Gets Exhibit ID as string. If null returns "-", otherwise returns ID.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Painting.PersonIdString">
+            <summary>
+            Gets Person ID as string. If null returns "-", otherwise returns ID.
+            </summary>
+        </member>
+        <member name="T:Gallery.Data.Models.Person">
+            <summary>
+            People table and its properties.
+            </summary>
+        </member>
+        <member name="M:Gallery.Data.Models.Person.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Data.Models.Person"/> class and the paintings set.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Person.Name">
+            <summary>
+            Gets or sets the name of a person that gave a painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Person.PhoneNumber">
+            <summary>
+            Gets or sets the phone number of a person that gave a painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Person.Email">
+            <summary>
+            Gets or sets the e-mail address of a person that gave a painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Person.BirthYear">
+            <summary>
+            Gets or sets the birth year of a person that gave a painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Person.ZipCode">
+            <summary>
+            Gets or sets the zip code of a person that gave a painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Person.PersonId">
+            <summary>
+            Gets or sets the ID of a person that gave a painting.
+            </summary>
+        </member>
+        <member name="P:Gallery.Data.Models.Person.Paintings">
+            <summary>
+            Gets the paintings that a person gave to the gallery.
+            </summary>
+        </member>
+    </members>
+</doc>

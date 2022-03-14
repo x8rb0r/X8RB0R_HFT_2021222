@@ -1,0 +1,23 @@
+﻿<Window x:Class="Gallery.WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gallery.WpfClient"
+        mc:Ignorable="d"
+        Title="Gallery Database" Height="400" Width="400">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <Label Content="Choose a table to edit!" Background="LightBlue" Padding="10" />
+            
+            <Button Content="Painting" Margin="10" Padding="10" Click="Painting_ButtonClick" />
+            <Button Content="Person" Margin="10" Padding="10" />
+            <Button Content="Exhibit" Margin="10" Padding="10" />
+            <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</Window>

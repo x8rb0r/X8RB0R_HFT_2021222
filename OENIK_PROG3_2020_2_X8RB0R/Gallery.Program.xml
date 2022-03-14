@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gallery.Program</name>
+    </assembly>
+    <members>
+        <member name="T:OENIK_PROG3_2020_2_X8RB0R.Application">
+            <summary>
+            Main class used for calling Console functions (highest layer).
+            </summary>
+        </member>
+        <member name="M:OENIK_PROG3_2020_2_X8RB0R.Application.Main">
+            <summary>
+            Main method used for calling Console functions.
+            </summary>
+        </member>
+        <member name="T:Gallery.Program.ConsoleCommands">
+            <summary>
+            Class used for displaying console.
+            </summary>
+        </member>
+        <member name="M:Gallery.Program.ConsoleCommands.#ctor(Gallery.Program.Factory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Program.ConsoleCommands"/> class.
+            </summary>
+            <param name="f">Factory instance.</param>
+        </member>
+        <member name="T:Gallery.Program.Factory">
+            <summary>
+            Factory class to make instances for all the classes.
+            </summary>
+        </member>
+        <member name="M:Gallery.Program.Factory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gallery.Program.Factory"/> class.
+            </summary>
+        </member>
+        <member name="P:Gallery.Program.Factory.PersonL">
+            <summary>
+            Gets or sets the PersonLogic instance.
+            </summary>
+        </member>
+        <member name="P:Gallery.Program.Factory.GalleryL">
+            <summary>
+            Gets or sets the GalleryLogic instance.
+            </summary>
+        </member>
+    </members>
+</doc>
