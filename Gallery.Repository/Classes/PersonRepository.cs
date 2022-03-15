@@ -140,18 +140,17 @@ namespace Gallery.Repository
             }
         }
 
-        public void UpdatePerson(Person item)
+        public void UpdatePerson(Person p)
         {
-            var old = this.GetOne(item.PersonId);
-            foreach (var prop in old.GetType().GetProperties())
-            {
-                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
-                {
-                    prop.SetValue(old, prop.GetValue(item));
-                }
-            }
+            var personToUpdate = GetOne(p.PersonId);
+            personToUpdate.Name = p.Name;
+            personToUpdate.PhoneNumber = p.PhoneNumber;
+            personToUpdate.Email = p.Email;
+            personToUpdate.BirthYear = p.BirthYear;
+            personToUpdate.ZipCode = p.ZipCode;
 
-            this.ctx.SaveChanges();
+
+            ctx.SaveChanges();
         }
 
  

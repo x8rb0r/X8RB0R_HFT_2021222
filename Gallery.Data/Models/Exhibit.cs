@@ -59,6 +59,7 @@ namespace Gallery.Data.Models
         /// Gets or sets the ID of the exhibition.
         /// </summary>
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ExhibitId { get; set; }
 
         /// <summary>

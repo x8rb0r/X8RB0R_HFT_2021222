@@ -25,17 +25,17 @@ namespace Gallery.Data
         /// <summary>
         /// Gets or sets Paintings table.
         /// </summary>
-        public virtual DbSet<Painting> Paintings { get; set; }
+        public DbSet<Painting> Paintings { get; set; }
 
         /// <summary>
         /// Gets or sets People table.
         /// </summary>
-        public virtual DbSet<Person> People { get; set; }
+        public DbSet<Person> People { get; set; }
 
         /// <summary>
         /// Gets or sets Exhibitions table.
         /// </summary>
-        public virtual DbSet<Exhibit> Exhibitions { get; set; }
+        public DbSet<Exhibit> Exhibitions { get; set; }
 
         /// <summary>
         /// Connects to database using SQL input string.
@@ -86,9 +86,9 @@ namespace Gallery.Data
                     .HasForeignKey(painting => painting.PersonId)
                     .OnDelete(DeleteBehavior.SetNull);
 
-                modelBuilder.Entity<Person>().Property(x => x.PersonId).ValueGeneratedNever();
-                modelBuilder.Entity<Exhibit>().Property(x => x.ExhibitId).ValueGeneratedNever();
-                modelBuilder.Entity<Painting>().Property(x => x.PaintingId).ValueGeneratedNever();
+                modelBuilder.Entity<Person>().Property(x => x.PersonId).ValueGeneratedOnAdd();
+                modelBuilder.Entity<Exhibit>().Property(x => x.ExhibitId).ValueGeneratedOnAdd();
+                modelBuilder.Entity<Painting>().Property(x => x.PaintingId).ValueGeneratedOnAdd();
                 modelBuilder.Entity<Person>().HasData(p1, p2, p3);
                 modelBuilder.Entity<Exhibit>().HasData(x1, x2, x3);
                 modelBuilder.Entity<Painting>().HasData(painting1, painting2, painting3, painting4, painting5, painting6);

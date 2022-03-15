@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery.WpfClient"
         mc:Ignorable="d"
-        Title="PaintingWindow" Height="450" Width="900">
+        Title="PaintingWindow" Height="800" Width="1000">
+    <Window.DataContext>
+        <local:PaintingWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{Binding Paintings}" SelectedItem="{Binding SelectedPainting}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Title}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <Label Content="Title" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPainting.Title}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="Painter" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPainting.Painter}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="Condition" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPainting.Condition}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="Value" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPainting.Value}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="Year painted" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPainting.YearPainted}" Padding="10" Margin="0,0,0,10"/>
+
+            <Button Content="Create Painting" Command="{Binding CreatePaintingCommand}" Margin="10" Padding="10"/>
+            <Button Content="Delete Painting" Command="{Binding DeletePaintingCommand}" Margin="10" Padding="10"/>
+            <Button Content="Update Painting" Command="{Binding UpdatePaintingCommand}" Margin="10" Padding="10"/>
+        </StackPanel>
     </Grid>
 </Window>

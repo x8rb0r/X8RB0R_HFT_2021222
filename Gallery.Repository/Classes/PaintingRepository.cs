@@ -123,18 +123,15 @@ namespace Gallery.Repository
             }
         }
 
-        public void UpdatePainting(Painting item)
+        public void UpdatePainting(Painting p)
         {
-            var old = this.GetOne(item.PaintingId);
-            foreach (var prop in old.GetType().GetProperties())
-            {
-                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
-                {
-                    prop.SetValue(old, prop.GetValue(item));
-                }
-            }
-
-            this.ctx.SaveChanges();
+            var paintingToUpdate = GetOne(p.PaintingId);
+            paintingToUpdate.Title = p.Title;
+            paintingToUpdate.Painter = p.Painter;
+            paintingToUpdate.Condition = p.Condition;
+            paintingToUpdate.Value = p.Value;
+            paintingToUpdate.YearPainted = p.YearPainted;
+            ctx.SaveChanges();
         }
     }
 }

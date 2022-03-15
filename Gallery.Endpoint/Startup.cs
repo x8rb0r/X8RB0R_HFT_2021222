@@ -1,5 +1,6 @@
 using Gallery.Data;
 using Gallery.Data.Models;
+using Gallery.Endpoint.Services;
 using Gallery.Logic;
 using Gallery.Logic.Classes;
 using Gallery.Logic.Interfaces;
@@ -44,6 +45,9 @@ namespace Gallery.Endpoint
             services.AddTransient<IPersonLogic, PersonLogic>();
 
             services.AddSingleton<GalleryContext, GalleryContext>();
+
+
+            services.AddSignalR();
             
             services.AddSwaggerGen(c =>
             {
@@ -68,6 +72,7 @@ namespace Gallery.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

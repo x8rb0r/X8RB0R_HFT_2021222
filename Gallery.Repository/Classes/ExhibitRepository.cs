@@ -124,18 +124,16 @@ namespace Gallery.Repository
 
      
 
-        public void UpdateExhibit(Exhibit item)
+        public void UpdateExhibit(Exhibit x)
         {
-            var old = this.GetOne(item.ExhibitId);
-            foreach (var prop in old.GetType().GetProperties())
-            {
-                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
-                {
-                    prop.SetValue(old, prop.GetValue(item));
-                }
-            }
+            var exhibitToUpdate = GetOne(x.ExhibitId);
+            exhibitToUpdate.Title = x.Title;
+            exhibitToUpdate.Rating = x.Rating;
+            exhibitToUpdate.EntryFee = x.EntryFee;
+            exhibitToUpdate.Start = x.Start;
+            exhibitToUpdate.End = x.End;
 
-            this.ctx.SaveChanges();
+            ctx.SaveChanges();
         }
     }
 }

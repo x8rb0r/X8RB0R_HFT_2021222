@@ -6,10 +6,6 @@
         xmlns:local="clr-namespace:Gallery.WpfClient"
         mc:Ignorable="d"
         Title="Gallery Database" Height="400" Width="400">
-
-    <Window.DataContext>
-        <local:MainWindowViewModel/>
-    </Window.DataContext>
     <Grid>
         <StackPanel>
             <Label Content="Choose a table to edit!" Background="LightBlue" Padding="10" />

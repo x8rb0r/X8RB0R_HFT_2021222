@@ -52,6 +52,7 @@ namespace Gallery.Data.Models
         /// <summary>
         /// Gets or sets the ID of a person that gave a painting.
         /// </summary>
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int PersonId { get; set; }
 

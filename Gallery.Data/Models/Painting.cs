@@ -44,7 +44,9 @@ namespace Gallery.Data.Models
         /// <summary>
         /// Gets or sets the ID of the painting.
         /// </summary>
+        
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PaintingId { get; set; }
 
         /// <summary>
