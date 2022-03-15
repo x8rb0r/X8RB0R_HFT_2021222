@@ -28,10 +28,24 @@ namespace Gallery.WpfClient
         public Painting SelectedPainting
         {
             get { return selectedPainting; }
-            set { 
-                SetProperty(ref selectedPainting, value);
-                (DeletePaintingCommand as RelayCommand).NotifyCanExecuteChanged();
+            set {
+                if (value != null)
+                {
+                    selectedPainting = new Painting()
+                    {
+                        PaintingId = value.PaintingId,
+                        ExhibitId = value.ExhibitId,
+                        PersonId = value.PersonId,
+                        Title = value.Title,
+                        Painter = value.Painter,
+                        Condition = value.Condition,
+                        Value = value.Value,
+                        YearPainted = value.YearPainted
+                    };
+                    OnPropertyChanged();
+                    (DeletePaintingCommand as RelayCommand).NotifyCanExecuteChanged();
                 }
+            }
         }
         public ICommand CreatePaintingCommand { get; set; }
         public ICommand DeletePaintingCommand { get; set; }

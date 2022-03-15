@@ -1,6 +1,8 @@
 using Gallery.Data.Models;
+using Gallery.Endpoint.Services;
 using Gallery.Logic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System.Collections.Generic;
 
 
@@ -10,12 +12,13 @@ namespace MovieDbApp.Endpoint.Controllers
     [ApiController]
     public class ExhibitController : ControllerBase
     {
-
+        IHubContext<SignalRHub> hub;
         IExhibitLogic logic;
 
-        public ExhibitController(IExhibitLogic logic)
+        public ExhibitController(IExhibitLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
 
         [HttpGet]
@@ -34,17 +37,21 @@ namespace MovieDbApp.Endpoint.Controllers
         public void Create([FromBody] Exhibit value)
         {
             this.logic.AddExhibit(value);
+            this.hub.Clients.All.SendAsync("ExhibitCreated", value);
         }
         [HttpPut]
         public void Update([FromBody] Exhibit value)
         {
             this.logic.UpdateExhibit(value);
+            this.hub.Clients.All.SendAsync("ExhibitUpdated", value);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var exhibitToDelete = this.logic.GetExhibit(id);
             this.logic.DeleteExhibit(id);
+            this.hub.Clients.All.SendAsync("ExhibitDeleted", exhibitToDelete);
         }
     }
 }
