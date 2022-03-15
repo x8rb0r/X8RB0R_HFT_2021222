@@ -11,8 +11,8 @@
             <Label Content="Choose a table to edit!" Background="LightBlue" Padding="10" />
             
             <Button Content="Painting" Margin="10" Padding="10" Click="Painting_ButtonClick" />
-            <Button Content="Person" Margin="10" Padding="10" />
-            <Button Content="Exhibit" Margin="10" Padding="10" />
+            <Button Content="Person" Margin="10" Padding="10" Click="Person_ButtonClick"/>
+            <Button Content="Exhibit" Margin="10" Padding="10" Click="ExhibitButton_Click" />
             <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
         </StackPanel>
     </Grid>

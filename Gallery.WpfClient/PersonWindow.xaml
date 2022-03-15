@@ -1,0 +1,41 @@
+﻿<Window x:Class="Gallery.WpfClient.PersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gallery.WpfClient"
+        mc:Ignorable="d"
+        Title="PersonWindow" Height="800" Width="1000">
+    <Window.DataContext>
+        <local:PersonWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <Label Content="Name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPerson.Name}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="Phone#" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPerson.PhoneNumber}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="E-mail" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPerson.Email}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="Birth year" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPerson.BirthYear}" Padding="10" Margin="0,0,0,10"/>
+            <Label Content="Zip code" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedPerson.ZipCode}" Padding="10" Margin="0,0,0,10"/>
+
+            <Button Content="Create" Command="{Binding CreatePersonCommand}" Margin="10" Padding="10"/>
+            <Button Content="Delete" Command="{Binding DeletePersonCommand}" Margin="10" Padding="10"/>
+            <Button Content="Update" Command="{Binding UpdatePersonCommand}" Margin="10" Padding="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

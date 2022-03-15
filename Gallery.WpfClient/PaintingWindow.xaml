@@ -33,9 +33,9 @@
             <Label Content="Year painted" Background="LightBlue" Padding="10"/>
             <TextBox Text="{Binding SelectedPainting.YearPainted}" Padding="10" Margin="0,0,0,10"/>
 
-            <Button Content="Create Painting" Command="{Binding CreatePaintingCommand}" Margin="10" Padding="10"/>
-            <Button Content="Delete Painting" Command="{Binding DeletePaintingCommand}" Margin="10" Padding="10"/>
-            <Button Content="Update Painting" Command="{Binding UpdatePaintingCommand}" Margin="10" Padding="10"/>
+            <Button Content="Create" Command="{Binding CreatePaintingCommand}" Margin="10" Padding="10"/>
+            <Button Content="Delete" Command="{Binding DeletePaintingCommand}" Margin="10" Padding="10"/>
+            <Button Content="Update" Command="{Binding UpdatePaintingCommand}" Margin="10" Padding="10"/>
         </StackPanel>
     </Grid>
 </Window>

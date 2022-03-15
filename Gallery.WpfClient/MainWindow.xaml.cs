@@ -31,5 +31,17 @@ namespace Gallery.WpfClient
             paintingWindow.Show();
 
         }
+
+        private void Person_ButtonClick(object sender, RoutedEventArgs e)
+        {
+            PersonWindow personWindow = new PersonWindow();
+            personWindow.Show();
+        }
+        private void ExhibitButton_Click(object sender, RoutedEventArgs e)
+        {
+            ExhibitWindow exhibitWindow = new ExhibitWindow();
+            exhibitWindow.Show();
+        }
+       
     }
 }
