@@ -42,6 +42,12 @@ namespace Gallery.WpfClient
             ExhibitWindow exhibitWindow = new ExhibitWindow();
             exhibitWindow.Show();
         }
-       
+        private void ExtrasButton_Click(object sender, RoutedEventArgs e)
+        {
+            ExtrasWindow extrasWindow = new ExtrasWindow();
+            extrasWindow.Show();
+        }
+
+
     }
 }

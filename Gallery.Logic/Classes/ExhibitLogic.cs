@@ -51,5 +51,15 @@ namespace Gallery.Logic.Classes
             this.exhibitRepo.UpdateExhibit(newX);
         }
 
+        public IList<Exhibit> BetterThanAverageFreeExhibits()
+        {
+            var q = from x in this.exhibitRepo.GetAll()
+                    where x.EntryFee == 0
+                    where x.Rating > 5
+                    orderby x.Rating descending
+                    select x;
+            return q.ToList();
+        }
+
     }
 }

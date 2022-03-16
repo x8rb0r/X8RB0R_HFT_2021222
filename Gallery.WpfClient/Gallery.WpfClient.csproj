@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gallery.Data\Gallery.Data.csproj" />
+    <ProjectReference Include="..\Gallery.Logic\Gallery.Logic.csproj" />
   </ItemGroup>
 
   <ItemGroup>

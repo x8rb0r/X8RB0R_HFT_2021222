@@ -117,6 +117,7 @@ namespace Gallery.Logic
                     select x;
             return q.ToList();
         }
+       
 
         /// <summary>
         /// Returns the @gmail.com domain users.

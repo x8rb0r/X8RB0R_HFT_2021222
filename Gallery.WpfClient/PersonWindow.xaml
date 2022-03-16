@@ -36,6 +36,7 @@
             <Button Content="Create" Command="{Binding CreatePersonCommand}" Margin="10" Padding="10"/>
             <Button Content="Delete" Command="{Binding DeletePersonCommand}" Margin="10" Padding="10"/>
             <Button Content="Update" Command="{Binding UpdatePersonCommand}" Margin="10" Padding="10"/>
+            <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
         </StackPanel>
     </Grid>
 </Window>

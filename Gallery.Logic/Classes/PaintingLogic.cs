@@ -47,5 +47,19 @@ namespace Gallery.Logic.Classes
         {
             this.paintingRepo.UpdatePainting(newP);
         }
+
+        public int NumberOfPaintings()
+        {
+            int q = (from x in this.paintingRepo.GetAll()
+                     select x).Count();
+            return q;
+        }
+        public IList<Painting> TopThreeMostExpensivePaintings()
+        {
+            var q = (from x in this.paintingRepo.GetAll()
+                     orderby x.Condition descending
+                     select x).Take(3);
+            return q.ToList();
+        }
     }
 }

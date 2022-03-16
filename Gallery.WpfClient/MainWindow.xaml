@@ -13,7 +13,8 @@
             <Button Content="Painting" Margin="10" Padding="10" Click="Painting_ButtonClick" />
             <Button Content="Person" Margin="10" Padding="10" Click="Person_ButtonClick"/>
             <Button Content="Exhibit" Margin="10" Padding="10" Click="ExhibitButton_Click" />
-            <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+            <Button Content="Extra functionalities" Margin="10" Padding="10" Click="ExtrasButton_Click" />
+            
         </StackPanel>
     </Grid>
 </Window>
