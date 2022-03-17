@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery.WpfClient"
         mc:Ignorable="d"
-        Title="Gallery Database" Height="400" Width="400">
+        Title="Gallery Database" Height="600" Width="400">
     <Grid>
         <StackPanel>
-            <Label Content="Choose a table to edit!" Background="LightBlue" Padding="10" />
+            <Label Content="Choose a table to edit!" Background="LightBlue" Padding="10"/>
             
             <Button Content="Painting" Margin="10" Padding="10" Click="Painting_ButtonClick" />
             <Button Content="Person" Margin="10" Padding="10" Click="Person_ButtonClick"/>
             <Button Content="Exhibit" Margin="10" Padding="10" Click="ExhibitButton_Click" />
-            <Button Content="Show Gmail users" Margin="10" Padding="10" Click="GmailUsersButton_Click"/>
+            <Button Content="List G-mail users" Margin="10" Padding="10" Click="GmailUsersButton_Click"/>
+            <Button Content="List Top 3 most valuable paintings" Margin="10" Padding="10" Click="TopThreePaintingsButton_Click"/>
+            <Button Content="Count number of paintings" Margin="10" Padding="10" Click="CountNumberOfPaintingsButton_Click"/>
+            
             
         </StackPanel>
     </Grid>

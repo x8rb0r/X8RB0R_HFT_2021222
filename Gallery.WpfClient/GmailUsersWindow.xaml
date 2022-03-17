@@ -7,8 +7,14 @@
         mc:Ignorable="d"
         Title="GmailUsersWindow" Height="400" Width="800">
     <Grid>
-        <ScrollViewer>
-            <ItemsControl FontSize="14" Margin="5" ItemsSource="{Binding Path=GmailUsers}"/>
-        </ScrollViewer>
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding GmailUsers}" AutoGenerateColumns="False" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" IsReadOnly="true"/>
+                <DataGridTextColumn Binding="{Binding Email}" Header="Email" IsReadOnly="true"/>
+                <DataGridTextColumn Binding="{Binding BirthYear}" Header="BirthYear"  IsReadOnly="true"/>
+                <DataGridTextColumn Binding="{Binding ZipCode}" Header="ZipCode"  IsReadOnly="true"/>
+                <DataGridTextColumn Binding="{Binding PhoneNumber}" Header="PhoneNumber" IsReadOnly="true"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

@@ -57,7 +57,7 @@ namespace Gallery.Logic.Classes
         public IList<Painting> TopThreeMostExpensivePaintings()
         {
             var q = (from x in this.paintingRepo.GetAll()
-                     orderby x.Condition descending
+                     orderby x.Value descending
                      select x).Take(3);
             return q.ToList();
         }

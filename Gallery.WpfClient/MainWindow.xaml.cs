@@ -47,8 +47,16 @@ namespace Gallery.WpfClient
             GmailUsersWindow w = new GmailUsersWindow();
             w.Show();
         }
+        private void TopThreePaintingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            TopThreePaintingsWindow w = new TopThreePaintingsWindow();
+            w.Show();
+        }
 
-
-
+        private void CountNumberOfPaintingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            CountNumberOfPaintingsMessageBox mb = new CountNumberOfPaintingsMessageBox();
+            mb.DisplayMessageBox();
+        }
     }
 }
