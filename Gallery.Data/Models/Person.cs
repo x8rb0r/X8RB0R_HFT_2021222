@@ -61,6 +61,10 @@ namespace Gallery.Data.Models
         /// </summary>
         [NotMapped]
         public virtual ICollection<Painting> Paintings { get; }
-       
+        public override string ToString()
+        {
+            return "Name: " + Name + " Email: " + Email + " Phone#: " + PhoneNumber + " Birth year: " + BirthYear + " ZipCode: " + ZipCode;
+        }
+
     }
 }
