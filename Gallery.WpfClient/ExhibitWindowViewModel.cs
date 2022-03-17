@@ -63,7 +63,7 @@ namespace Gallery.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Exhibits = new RestCollection<Exhibit>("http://localhost:26918/", "person", "hub");
+                Exhibits = new RestCollection<Exhibit>("http://localhost:26918/", "exhibit", "hub");
                 CreateExhibitCommand = new RelayCommand(() =>
                 {
                     Exhibits.Add(new Exhibit()

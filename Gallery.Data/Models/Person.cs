@@ -61,5 +61,6 @@ namespace Gallery.Data.Models
         /// </summary>
         [NotMapped]
         public virtual ICollection<Painting> Paintings { get; }
+       
     }
 }

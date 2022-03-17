@@ -32,11 +32,13 @@
             <TextBox Text="{Binding SelectedPerson.BirthYear}" Padding="10" Margin="0,0,0,10"/>
             <Label Content="Zip code" Background="LightBlue" Padding="10"/>
             <TextBox Text="{Binding SelectedPerson.ZipCode}" Padding="10" Margin="0,0,0,10"/>
+            
 
             <Button Content="Create" Command="{Binding CreatePersonCommand}" Margin="10" Padding="10"/>
             <Button Content="Delete" Command="{Binding DeletePersonCommand}" Margin="10" Padding="10"/>
             <Button Content="Update" Command="{Binding UpdatePersonCommand}" Margin="10" Padding="10"/>
             <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+            <Button Content="Gmail Users" Margin="10" Padding="10" Click="GmailUsersButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

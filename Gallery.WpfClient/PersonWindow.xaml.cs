@@ -23,5 +23,10 @@ namespace Gallery.WpfClient
         {
             InitializeComponent();
         }
+
+        private void GmailUsersButton_Click(object sender, RoutedEventArgs e)
+        {
+           // GmailUsersWindow window =
+        }
     }
 }

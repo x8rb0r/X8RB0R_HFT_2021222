@@ -23,6 +23,7 @@ namespace Gallery.WpfClient
         }
 
         public RestCollection<Painting> Paintings { get; set; }
+        
 
         private Painting selectedPainting;
         public Painting SelectedPainting

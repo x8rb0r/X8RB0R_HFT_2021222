@@ -28,6 +28,8 @@ namespace MovieDbApp.Endpoint.Controllers
             return this.logic.ReadAll();
         }
 
+       
+
         [HttpGet("{id}")]
         public Person Read(int id)
         {

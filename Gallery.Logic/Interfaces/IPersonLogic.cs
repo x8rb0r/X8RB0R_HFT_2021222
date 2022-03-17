@@ -70,5 +70,7 @@ namespace Gallery.Logic
         bool PersonExists(int id);
 
         void UpdatePerson(Person p);
+
+        public IList<Person> GmailUsers();
     }
 }
