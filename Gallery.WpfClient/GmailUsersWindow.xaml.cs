@@ -33,13 +33,9 @@ namespace Gallery.WpfClient
         }
         public void CreateGmailUsersList()
         {
-            GalleryContext ctx = new GalleryContext();
-            //ExhibitRepository exhibitRepo = new ExhibitRepository(ctx);
-            PersonRepository personRepo = new PersonRepository(ctx);
-            //PaintingRepository paintingRepo = new PaintingRepository(ctx);
-            PersonLogic l = new PersonLogic(personRepo);
 
-            GmailUsers = l.GmailUsers();
+            Factory f = new Factory();
+            GmailUsers = f.PersonL.GmailUsers();
 
         }
     }

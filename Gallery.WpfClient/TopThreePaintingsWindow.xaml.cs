@@ -27,20 +27,17 @@ namespace Gallery.WpfClient
         public TopThreePaintingsWindow()
         {
             InitializeComponent();
-
             DataContext = this;
+
             CreateTopThreePaintingsList();
         }
 
         public void CreateTopThreePaintingsList()
         {
-            GalleryContext ctx = new GalleryContext();
-            //ExhibitRepository exhibitRepo = new ExhibitRepository(ctx);
-            //PersonRepository personRepo = new PersonRepository(ctx);
-            PaintingRepository paintingRepo = new PaintingRepository(ctx);
-            PaintingLogic l = new PaintingLogic(paintingRepo);
 
-            TopThreePaintings = l.TopThreeMostExpensivePaintings();
+            Factory f = new Factory();
+            TopThreePaintings = f.PaintingL.TopThreeMostExpensivePaintings();
+            
 
         }
     }

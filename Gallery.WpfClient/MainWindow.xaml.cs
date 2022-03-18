@@ -55,8 +55,8 @@ namespace Gallery.WpfClient
 
         private void CountNumberOfPaintingsButton_Click(object sender, RoutedEventArgs e)
         {
-            CountNumberOfPaintingsMessageBox mb = new CountNumberOfPaintingsMessageBox();
-            mb.DisplayMessageBox();
+            Factory f = new Factory();
+            MessageBox.Show("Number of paintings: " + f.PaintingL.NumberOfPaintings());
         }
     }
 }
