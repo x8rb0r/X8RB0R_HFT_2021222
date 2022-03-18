@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gallery.WpfClient"
         mc:Ignorable="d"
-        Title="MostExpensivePaintingAndItsExhibitWindow" Height="450" Width="800">
+        Title="MostExpensivePaintingAndItsExhibitWindow" Height="300" Width="450">
     <Grid>
         <Grid>
             <DataGrid x:Name="dataGrid" ItemsSource="{Binding MostExpensivePaintingAndItsExhibit}" AutoGenerateColumns="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
