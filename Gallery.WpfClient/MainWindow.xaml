@@ -16,7 +16,9 @@
             <Button Content="List G-mail users" Margin="10" Padding="10" Click="GmailUsersButton_Click"/>
             <Button Content="List Top 3 most valuable paintings" Margin="10" Padding="10" Click="TopThreePaintingsButton_Click"/>
             <Button Content="Count number of paintings" Margin="10" Padding="10" Click="CountNumberOfPaintingsButton_Click"/>
-            
+            <Button Content="List exhibits and the number of paintings they have" Margin="10" Padding="10" Click="ExhibitPaintingCount_Click"/>
+            <Button Content="Show where the most expensive painting is displayed" Margin="10" Padding="10" Click="MostExpensivePaintingAndItsExhibit_Click"/>
+           
             
         </StackPanel>
     </Grid>

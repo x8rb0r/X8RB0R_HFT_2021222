@@ -58,5 +58,17 @@ namespace Gallery.WpfClient
             Factory f = new Factory();
             MessageBox.Show("Number of paintings: " + f.PaintingL.NumberOfPaintings());
         }
+
+        private void ExhibitPaintingCount_Click(object sender, RoutedEventArgs e)
+        {
+            ExhibitsAndTheNumberofPaintingsItHasWindow w = new ExhibitsAndTheNumberofPaintingsItHasWindow();
+            w.Show();
+        }
+
+        private void MostExpensivePaintingAndItsExhibit_Click(object sender, RoutedEventArgs e)
+        {
+            MostExpensivePaintingAndItsExhibitWindow w = new MostExpensivePaintingAndItsExhibitWindow();
+            w.Show();
+        }
     }
 }
