@@ -79,12 +79,12 @@ namespace Gallery.Data
                    .HasOne(painting => painting.Exhibit)
                    .WithMany(exhibit => exhibit.Paintings)
                    .HasForeignKey(painting => painting.ExhibitId)
-                   .OnDelete(DeleteBehavior.SetNull);
+                   .OnDelete(DeleteBehavior.Cascade);
                 modelBuilder.Entity<Painting>()
                     .HasOne(painting => painting.Person)
                     .WithMany(person => person.Paintings)
                     .HasForeignKey(painting => painting.PersonId)
-                    .OnDelete(DeleteBehavior.SetNull);
+                    .OnDelete(DeleteBehavior.Cascade);
 
                 modelBuilder.Entity<Person>().Property(x => x.PersonId).ValueGeneratedOnAdd();
                 modelBuilder.Entity<Exhibit>().Property(x => x.ExhibitId).ValueGeneratedOnAdd();

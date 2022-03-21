@@ -9,6 +9,7 @@ namespace Gallery.Data.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Paintings table and its properties.
@@ -52,6 +53,7 @@ namespace Gallery.Data.Models
         /// <summary>
         /// Gets or sets the person that this painting originates from.
         /// </summary>
+        [JsonIgnore]
         [NotMapped]
         public virtual Person Person { get; set; }
 
@@ -65,6 +67,7 @@ namespace Gallery.Data.Models
         /// Gets or sets the exhibit that this painting is displayed in.
         /// </summary>
         [NotMapped]
+        [JsonIgnore]
         public virtual Exhibit Exhibit { get; set; }
 
         /// <summary>

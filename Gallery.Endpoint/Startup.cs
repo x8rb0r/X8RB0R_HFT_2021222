@@ -35,7 +35,7 @@ namespace Gallery.Endpoint
         {
             
             services.AddControllers();
-            services.AddScoped<DbContext, GalleryContext>();
+            services.AddSingleton<DbContext, GalleryContext>();
             services.AddTransient<IExhibitRepository, ExhibitRepository>();
             services.AddTransient<IPaintingRepository, PaintingRepository>();
             services.AddTransient<IPersonRepository, PersonRepository>();

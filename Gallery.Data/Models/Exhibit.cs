@@ -9,6 +9,7 @@ namespace Gallery.Data.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Exhibitions table and its properties.
@@ -53,6 +54,7 @@ namespace Gallery.Data.Models
         /// Gets the collection of paintings displayed in the exhibition.
         /// </summary>
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Painting> Paintings { get; }
 
         /// <summary>

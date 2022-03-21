@@ -9,6 +9,7 @@ namespace Gallery.Data.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// People table and its properties.
@@ -60,6 +61,7 @@ namespace Gallery.Data.Models
         /// Gets the paintings that a person gave to the gallery.
         /// </summary>
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Painting> Paintings { get; }
         public override string ToString()
         {
