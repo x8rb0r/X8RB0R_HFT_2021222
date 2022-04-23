@@ -65,6 +65,12 @@ namespace Gallery.Endpoint
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gallery.Endpoint v1"));
             }
 
+            app.UseCors(x => x
+            .AllowCredentials()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:46649"));
+
             app.UseRouting();
 
             app.UseAuthorization();
