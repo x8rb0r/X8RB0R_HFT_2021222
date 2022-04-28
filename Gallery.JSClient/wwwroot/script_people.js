@@ -62,8 +62,8 @@ function display() {
     document.getElementById('resultarea').innerHTML = "";
     people.forEach(t => {
         document.getElementById('resultarea').innerHTML +=
-            
-            "</td><td>" + t.name + "</td><td>" + t.phoneNumber + "</td><td>" + t.email + "</td><td>" + t.birthYear + "</td><td>" + t.zipCode + "</td><td>" + `<button type ="button" onclick="remove(${t.personId})">Delete` + "</td></tr>";
+
+            "</td><td>" + t.personId+"</td><td>" + t.name + "</td><td>" + t.phoneNumber + "</td><td>" + t.email + "</td><td>" + t.birthYear + "</td><td>" + t.zipCode + "</td><td>" + `<button type ="button" onclick="remove(${t.personId})">Delete` + "</td></tr>";
         
     });
 }
