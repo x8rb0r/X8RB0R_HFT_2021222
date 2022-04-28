@@ -8,6 +8,7 @@ namespace Gallery.Logic
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
     using Gallery.Data.Models;
 
     /// <summary>
@@ -15,6 +16,7 @@ namespace Gallery.Logic
     /// </summary>
     public interface IPersonLogic
     {
+        Task<IList<Person>> GmailUsersAsync();
         /// <summary>
         /// Mandatory Person logic methods.
         /// </summary>
