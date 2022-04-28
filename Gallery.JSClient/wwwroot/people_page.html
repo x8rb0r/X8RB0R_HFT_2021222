@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Paintings</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Exhibits Catalog</h1>
+
+    <div id="formdiv">
+        <label>Name</label>
+        <input type="text" id="personname" />
+        <label>PhoneNumber</label>
+        <input type="text" id="personphonenumber" />
+        <label>Condition</label>
+        <input type="text" id="personemail" />
+        <label>Value</label>
+        <input type="number" id="personbirthyear" />
+        <label>ZipCode</label>
+        <input type="number" id="personzipcode" />
+        <button type="button" onclick="create()">Add Person</button>
+        <label>ID (for update)</label>
+        <input type="number" id="personid_input" />
+        <button type="button" onclick="update()">Update Person</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+                <th>BirthYear</th>
+                <th>ZipCode</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script_people.js"></script>
+</body>
+</html>

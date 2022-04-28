@@ -20,6 +20,11 @@ function setupSignalR() {
         (
             "PaintingDeleted", (user, message) => {
                 getdata();
+        });
+    connection.on
+        (
+            "PaintingUpdated", (user, message) => {
+                getdata();
             });
 
     connection.onclose
@@ -57,10 +62,12 @@ function display() {
     document.getElementById('resultarea').innerHTML = "";
     paintings.forEach(t => {
         document.getElementById('resultarea').innerHTML +=
-            "<tr><td>" + t.title + "</td><td>" + t.painter + "</td><td>" + t.condition + "</td><td>" + t.value + "</td><td>" + t.yearPainted + "</td><td>" + `<button type ="button" onclick="remove(${t.paintingId})">Delete` + "</td></tr>";
+            
+            "</td><td>" + t.title + "</td><td>" + t.painter + "</td><td>" + t.condition + "</td><td>" + t.value + "</td><td>" + t.yearPainted + "</td><td>" + `<button type ="button" onclick="remove(${t.paintingId})">Delete` + "</td></tr>";
         
     });
 }
+
 
 function remove(id) {
     fetch('http://localhost:26918/Painting/'+ id, {
@@ -79,6 +86,34 @@ function remove(id) {
             console.error('Error:', error);
         });
 
+}
+function update() {
+    let title = document.getElementById('paintingtitle').value;
+    let painter = document.getElementById('paintingpainter').value;
+    let condition = document.getElementById('paintingcondition').value;
+    let value = document.getElementById('paintingvalue').value;
+    let yearpainted = document.getElementById('paintingyearpainted').value;
+    let paintingid = document.getElementById('paintingid_input').value;
+
+    fetch('http://localhost:26918/Painting/', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            {
+                PaintingId: paintingid,
+                Title: title,
+                Painter: painter,
+                Condition: condition,
+                Value: value,
+                YearPainted: yearpainted
+            })
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            getdata();
+        })
+        .catch((error) => { console.error('Error:', error); });
 }
 
 function create() {

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\script1.js">
+    <Content Update="wwwroot\scriptpaintings.js">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\style.css">

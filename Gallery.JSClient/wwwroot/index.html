@@ -2,42 +2,20 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>UI</title>
-    <link rel="stylesheet" href="style.css"/>
+    <title>Gallery Database</title>
 </head>
 <body>
-    <h1>Painting Catalog</h1>
+    <h1>Choose a table to edit!</h1>
+    <input type=button onClick="parent.open('http://localhost:46649/paintings.html')"
+           value="Paintings">
+    <input type=button onClick="parent.open('http://localhost:46649/people_page.html')"
+           value="People">
 
-    <div id="formdiv">
-        <label>Title</label>
-        <input type="text" id="paintingtitle" />
-        <label>Painter</label>
-        <input type="text" id="paintingpainter" />
-        <label>Condition</label>
-        <input type="number" id="paintingcondition" />
-        <label>Value</label>
-        <input type="number" id="paintingvalue" />
-        <label>YearPainted</label>
-        <input type="number" id="paintingyearpainted" />
-        <button type="button" onclick="create()">Add Painting</button>
-    </div>
+    <h1>Non CRUD methods</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Painter</th>
-                <th>Condition</th>
-                <th>Value</th>
-                <th>YearPainted</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="resultarea">
-        </tbody>
-    </table>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
-    <script src="script1.js"></script>
 </body>
 </html>
