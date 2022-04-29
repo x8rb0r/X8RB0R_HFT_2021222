@@ -24,19 +24,19 @@ namespace Gallery.WpfClient
     /// </summary>
     public partial class GmailUsersWindow : Window
     {
+        RestService rest;
         public IList<Person> GmailUsers { get; set; }
         public GmailUsersWindow()
         {
             InitializeComponent();
             DataContext = this;
+
+            rest = new RestService("http://localhost:26918/");
             CreateGmailUsersList();
         }
         public void CreateGmailUsersList()
         {
-
-            Factory f = new Factory();
-            GmailUsers = f.PersonL.GmailUsers();
-
+            GmailUsers = rest.Get<Person>("NonCRUD/GmailUsers");
         }
     }
 }

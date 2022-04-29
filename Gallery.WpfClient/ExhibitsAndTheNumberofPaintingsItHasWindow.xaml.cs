@@ -21,30 +21,22 @@ namespace Gallery.WpfClient
     /// </summary>
     public partial class ExhibitsAndTheNumberofPaintingsItHasWindow : Window
     {
+        RestService rest;
         public IList<ExhibitsAndCountPaintingsGroup> ExhibitsAndTheNumberofPaintingsItHas { get; set; }
         public ExhibitsAndTheNumberofPaintingsItHasWindow()
         {
             InitializeComponent();
 
             DataContext = this;
+
+            rest = new RestService("http://localhost:26918/");
             CreateExhibitsAndTheNumberofPaintingsItHasList();
         }
         public void CreateExhibitsAndTheNumberofPaintingsItHasList()
         {
-            Factory f = new Factory();
-            PaintingLogic paintingLogic = f.PaintingL;
-            ExhibitLogic exhibitLogic = f.ExhibitL;
 
+            ExhibitsAndTheNumberofPaintingsItHas = rest.Get<ExhibitsAndCountPaintingsGroup>("NonCRUD/ExhibitsCountPaintings");
 
-            var q = from t1 in paintingLogic.ReadAll()
-                    join t2 in exhibitLogic.ReadAll() on t1.ExhibitId equals t2.ExhibitId
-                    group t2 by t2.Title into g
-                    select new ExhibitsAndCountPaintingsGroup()
-                    {
-                        EXHIBIT = g.Key,
-                        NUMBER_OF_PAINTINGS = g.Count(),
-                    };
-            ExhibitsAndTheNumberofPaintingsItHas = q.ToList();
         }
     }
 }

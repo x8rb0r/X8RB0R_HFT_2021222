@@ -63,7 +63,7 @@ function display() {
     paintings.forEach(t => {
         document.getElementById('resultarea').innerHTML +=
             
-            "</td><td>" + t.title + "</td><td>" + t.painter + "</td><td>" + t.condition + "</td><td>" + t.value + "</td><td>" + t.yearPainted + "</td><td>" + `<button type ="button" onclick="remove(${t.paintingId})">Delete` + "</td></tr>";
+            "</td><td>" + t.paintingId + "</td><td>" +  t.title + "</td><td>" + t.painter + "</td><td>" + t.condition + "</td><td>" + t.value + "</td><td>" + t.yearPainted + "</td><td>" + `<button type ="button" onclick="remove(${t.paintingId})">Delete` + "</td></tr>";
         
     });
 }

@@ -21,29 +21,20 @@ namespace Gallery.WpfClient
     /// </summary>
     public partial class MostExpensivePaintingAndItsExhibitWindow : Window
     {
+        RestService rest;
         public IList<MostExpensivePaintingAndItsExhibitGroup> MostExpensivePaintingAndItsExhibit { get; set; }
         public MostExpensivePaintingAndItsExhibitWindow()
         {
             InitializeComponent();
 
             DataContext = this;
+            rest = new RestService("http://localhost:26918/");
             CreateMostExpensivePaintingAndItsExhibit();
         }
         public void CreateMostExpensivePaintingAndItsExhibit()
         {
-            Factory f = new Factory();
-            PaintingLogic paintingLogic = f.PaintingL;
-            ExhibitLogic exhibitLogic = f.ExhibitL;
-
-            var q = (from t1 in paintingLogic.ReadAll()
-                     join t2 in exhibitLogic.ReadAll() on t1.ExhibitId equals t2.ExhibitId
-                     orderby t1.Value descending
-                     select new MostExpensivePaintingAndItsExhibitGroup()
-                     {
-                         EXHIBIT = t2.Title,
-                         PAINTING = t1.Title,
-                     }).Take(1);
-             MostExpensivePaintingAndItsExhibit = q.ToList();
+            
+            MostExpensivePaintingAndItsExhibit = rest.Get<MostExpensivePaintingAndItsExhibitGroup>("NonCRUD/MostExpensivePaintingandItsExhibit");
         }
 
     }
