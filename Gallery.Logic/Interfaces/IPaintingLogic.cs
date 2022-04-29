@@ -14,7 +14,7 @@ namespace Gallery.Logic.Interfaces
     public interface IPaintingLogic
     {
 
-
+        public int NumberOfPaintings();
         public IList<Painting> TopThreeMostExpensivePaintings();
         /// <summary>
         /// Returns a single painting instance by ID, forwarded to the repository.

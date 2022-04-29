@@ -43,6 +43,12 @@ namespace Gallery.Endpoint.Controllers
         }
 
         [HttpGet]
+        public int NumberOfPaintings()
+        {
+            return paintingLogic.NumberOfPaintings();
+        }
+
+        [HttpGet]
         public IEnumerable<Person> GmailUsers()
         {
             var q = from x in this.personLogic.ReadAll()

@@ -55,8 +55,9 @@ namespace Gallery.WpfClient
 
         private void CountNumberOfPaintingsButton_Click(object sender, RoutedEventArgs e)
         {
-            Factory f = new Factory();
-            MessageBox.Show("Number of paintings: " + f.PaintingL.NumberOfPaintings());
+            RestService rest= new RestService("http://localhost:26918/");
+            int countPaintings = rest.GetSingle<int>("NonCRUD/NumberOfPaintings");
+            MessageBox.Show("Number of paintings: " + countPaintings);
         }
 
         private void ExhibitPaintingCount_Click(object sender, RoutedEventArgs e)
